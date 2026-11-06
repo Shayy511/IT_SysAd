@@ -21,14 +21,14 @@ jobs:
     steps:
       - name: Execute remote ssh commands
         uses: appleboy/ssh-action@v1.0.3
-          with:
-            host: ${{ secrets.LIGHTSAIL_HOST }}
-            username: ${{ secrets.LIGHTSAIL_USER }}
-            key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
-            port: 22
-            script: |
-              cd /home/ubuntu/IT_SysAd
-              git pull origin main
-              sudo cp index.html /var/www/html
-              sudo chmod 755 /var/www/html
+        with:
+          host: ${{ secrets.LIGHTSAIL_HOST }}
+          username: ${{ secrets.LIGHTSAIL_USER }}
+          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          port: 22
+          script: |
+            cd /home/ubuntu/IT_SysAd
+            git pull origin main
+            sudo cp index.html /var/www/html
+            sudo chmod 755 /var/www/html
               
